@@ -1,0 +1,6 @@
+import { Save } from "lucide-react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AppShell from "../components/AppShell";
+
+export default function Profile({user,setUser,onLogout}){const [name,setName]=useState(user.name);const nav=useNavigate();const save=()=>setUser({...user,name});const logout=()=>{onLogout();nav("/")};return <AppShell user={user} onLogout={onLogout}><div className="dashboard-head"><div><span className="eyebrow">ACCOUNT</span><h1>Profile</h1><p>Manage your TaskFlow profile.</p></div></div><div className="profile-card"><div className="profile-avatar">{name.charAt(0).toUpperCase()}</div><h2>{name}</h2><p>{user.email}</p><div className="profile-form"><label>Full name<input value={name} onChange={e=>setName(e.target.value)}/></label><label>Email address<input value={user.email} disabled/></label><button className="btn btn-primary" onClick={save}><Save size={17}/> Save changes</button></div><button className="logout-link" onClick={logout}>Log out</button></div></AppShell>}
