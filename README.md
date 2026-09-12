@@ -1,4 +1,4 @@
-# ✅ Taskly
+# ✅ TaskFlow
 
 ### A simple, modern task management application built to help you plan, organize, and accomplish more.
 
